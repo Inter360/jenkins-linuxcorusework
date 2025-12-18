@@ -1,27 +1,50 @@
-#ifndef STRING_PROCESSOR
+﻿#ifndef STRING_PROCESSOR
 #define STRING_PROCESSOR
 #include <stdint.h>
 #include <stdbool.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <stdio.h>
 #include "sort.h"
 #define STRING_MAX 512ull
 const int32_t get_str(const char const* msg, char* str, const int32_t limit)
 {
-    //paste your solution here
+    if (msg != NULL)
+        printf("%s", msg);
+
+    if (fgets(str, limit, stdin) == NULL)
+        return -1;
+
+    
+    size_t len = 0;
+    while (str[len] != '\0') len++;
+    if (len > 0 && str[len - 1] == '\n')
+        str[len - 1] = '\0';
+
+    return 0;
 }
 const size_t strlenn(const char* str)
 {
-    //paste your solution here
+    size_t len = 0;
+    while (str && str[len] != '\0')
+        len++;
+    return len;
 }
 void strcopy(char* fStr, char* sStr, size_t until)
 {
-    //paste your solution here
+    size_t i;
+    for (i = 0; i < until && sStr[i] != '\0'; i++)
+        fStr[i] = sStr[i];
+    fStr[i] = '\0';
 }
 int32_t strcmpp(const char* fStr, const char* sStr)
 {
-    //paste your solution here
+    while (*fStr && (*fStr == *sStr))
+    {
+        fStr++;
+        sStr++;
+    }
+    return (unsigned char)(*fStr) - (unsigned char)(*sStr);
 }
 char* strcatt(char* fStr, const char* sStr)
 {

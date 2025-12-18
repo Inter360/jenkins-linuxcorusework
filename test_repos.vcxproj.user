@@ -3,5 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerCommandArguments>--gtest_output=xml:test_report.xml</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArgumentsHistory>--gtest_output=xml:test_report.xml|</LocalDebuggerCommandArgumentsHistory>
   </PropertyGroup>
 </Project>
